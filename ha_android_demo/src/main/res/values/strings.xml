@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">HA-Demo</string>
+    <string name="app_name">移动监控Demo</string>
+    <string name="monitor_toast_exit">再按一次退出应用</string>
+    <string name="monitor_app_hint">欢迎来到阿里云移动监控\nDemo,开始你的调试吧~</string>
+    <string name="monitor_crash_label">崩溃分析</string>
+    <string name="monitor_btn_text_java_crash">Java Crash</string>
+    <string name="monitor_btn_text_native_crash">Native Crash</string>
+    <string name="monitor_btn_text_main_thread">主线程卡顿</string>
+    <string name="monitor_btn_text_custom_mistake">自定义错误</string>
+    <string name="monitor_btn_text_io_exception">IO异常</string>
+    <string name="monitor_ability_analysis">性能分析</string>
+    <string name="monitor_btn_text_page_load">测页面加载</string>
+    <string name="monitor_btn_text_page_scroll">测页面滑动</string>
+    <string name="monitor_btn_text_network_request">网络请求</string>
+    <string name="monitor_remote_log">远程日志</string>
+    <string name="monitor_btn_text_print_log">打日志</string>
+    <string name="monitor_btn_text_update_nick_name">更新昵称</string>
+    <string name="monitor_test_step">测试步骤</string>
 </resources>

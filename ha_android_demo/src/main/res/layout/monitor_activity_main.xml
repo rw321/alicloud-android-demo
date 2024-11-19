@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="MainBinding">
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/monitor_main_bg">
+
+                <ImageView
+                    android:id="@+id/ivMainBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/monitor_bg"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvHello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="#3D3D3D"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="108dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monitor_app_hint"
+                    android:textColor="#607B9C"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/tvHello"
+                    app:layout_constraintTop_toBottomOf="@id/tvHello"/>
+
+                <TextView
+                    android:id="@+id/tvLabelCrash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/monitor_crash_label"
+                    android:textColor="@color/monitor_color_31383E"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivMainBg"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelCrash"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvJavCrash"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_java_crash"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvNativeCrash"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_native_crash"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineOne"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvMainThread"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_main_thread"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvCustomMistake"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_custom_mistake"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineTwo"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvIOException"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_io_exception"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvAbilityAnalysis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/monitor_ability_analysis"
+                    android:textColor="@color/monitor_color_31383E"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineThree"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvAbilityAnalysis"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPageLoad"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_page_load"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvPageScroll"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_page_scroll"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineFour"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvNetRequest"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_network_request"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvRemoteLog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/monitor_remote_log"
+                    android:textColor="@color/monitor_color_31383E"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineFive"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvTestStep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/monitor_test_step"
+                    android:textColor="@color/monitor_color_315CFC"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/llBtnLineFive"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
+                
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/monitor_alert"
+                    app:layout_constraintTop_toTopOf="@id/tvTestStep"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTestStep"
+                    app:layout_constraintEnd_toStartOf="@id/tvTestStep"
+                    android:layout_marginEnd="4dp" />
+
+                <LinearLayout
+                    android:id="@+id/llBtnLineSix"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvRemoteLog"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPrintLog"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_print_log"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <TextView
+                        android:id="@+id/tvUpdateNickName"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/monitor_shape_bg_btn"
+                        android:text="@string/monitor_btn_text_update_nick_name"
+                        android:gravity="center"
+                        android:textColor="@color/monitor_color_text_black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </FrameLayout>
+</layout>
