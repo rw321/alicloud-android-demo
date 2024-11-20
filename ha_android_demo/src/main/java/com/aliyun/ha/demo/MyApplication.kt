@@ -1,9 +1,14 @@
 package com.aliyun.ha.demo
 
 import android.app.Application
+import android.util.Log
 import com.alibaba.ha.adapter.AliHaAdapter
 import com.alibaba.ha.adapter.AliHaConfig
 import com.alibaba.ha.adapter.Plugin
+import com.alibaba.ha.adapter.service.tlog.TLogLevel
+import com.alibaba.ha.adapter.service.tlog.TLogService
+import com.alibaba.sdk.android.networkmonitor.NetworkMonitorManager
+import com.alibaba.sdk.android.networkmonitor.utils.Logger
 
 /**
  * @author ren
@@ -41,6 +46,23 @@ class MyApplication: Application() {
 
         AliHaAdapter.getInstance().openDebug(true) //调试日志开关
 
+        TLogService.updateLogLevel(TLogLevel.VERBOSE)
+
         AliHaAdapter.getInstance().start(config) //启动
+
+        NetworkMonitorManager.getInstance().addLogger(object : Logger {
+            override fun logd(s: String, s1: String) {
+                Log.d(s, s1)
+            }
+
+            override fun logi(s: String, s1: String) {
+                Log.i(s, s1)
+            }
+
+            override fun logw(s: String, s1: String) {
+                Log.w(s, s1)
+            }
+        })
+
     }
 }

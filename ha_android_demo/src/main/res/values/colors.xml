@@ -15,4 +15,7 @@
     <color name="monitor_color_white">#ffffff</color>
     <color name="monitor_color_315CFC">#315CFC</color>
 
+    <color name="monitor_main">#1B58F4</color>
+    <color name="white">#FFFFFFFF</color>
+
 </resources>
