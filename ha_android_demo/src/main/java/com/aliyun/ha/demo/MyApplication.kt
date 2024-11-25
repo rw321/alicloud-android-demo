@@ -23,15 +23,15 @@ class MyApplication: Application() {
 
     private fun initMonitor(){
         val config = AliHaConfig().apply {
-            appKey = "335156672"
+            appKey = "335189575"
             appVersion = BuildConfig.VERSION_NAME
-            appSecret = "c7ccbf3f45434f1ba17974fb000caa06"
+            appSecret = "4a120826c1e7497d9d0e24983c2dd65e"
             channel = "mqc_test"
             userNick = null
             application = this@MyApplication
             context = applicationContext
             isAliyunos = false
-            rsaPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCT45cUkm4ZnW9vgUEtrKAjRY+kzyDdPtfhIinYcJCIiNLECLrecycBUK6thxnIHrrnqWFn05TCoLgF+XtnlKY+GGPwAKGwc5zrkqzfrN1tto3o6yRbYPAeePDAwfJyZHz5ZJkIouwN/2xA3q4yYfGy6STD5rhBBaSPqNrAEJ0hJwIDAQAB"
+            rsaPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDzCnEudGjuyEOG6tgGZPMmEih6mtFYATgPry8VpdnDI5kuN2ZW0GSb8SGoWUsrbe2Dv99rtZRW3xTqlKSB/nv5K2Hy5tAdlRa9Fr23h7sg2WZevImWLO+8EIVmCcECI2HRJQ0IZ8IXC/Vene9cpkXnrXnculxiOLoPRqfawQEZcwIDAQAB"
         }
 
         AliHaAdapter.getInstance().addCustomInfo("custom", "value")
