@@ -87,9 +87,9 @@ class InfoFragment : BaseFragment() {
         }
 
         when{
-            PushManufacturerUtil.supportHuaweiPush() -> PushManufacturerUtil.getHuaweiToken(requireContext()) {
-                setToken(it)
-            }
+//            PushManufacturerUtil.supportHuaweiPush() -> PushManufacturerUtil.getHuaweiToken(requireContext()) {
+//                setToken(it)
+//            }
             PushManufacturerUtil.supportHonorPush(requireContext()) -> PushManufacturerUtil.getHonorToken {
                 setToken(it)
             }

@@ -23,6 +23,7 @@ class MainApplication:Application() {
         super.onCreate()
         Config.init(this)
         initPushSdk(this)
+        TTSManager.init(this)
     }
 
     private fun initPushSdk(context: Context) {

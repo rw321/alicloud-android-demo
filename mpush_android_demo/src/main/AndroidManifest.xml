@@ -16,14 +16,14 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
 
-        <!-- 请填写你自己的- appKey EMASDemo空间 23793506 -->
+        <!-- 请填写你自己的- appKey -->
         <meta-data
             android:name="com.alibaba.app.appkey"
-            android:value="XXX" />
+            android:value="335302971" />
         <!-- 请填写你自己的appSecret -->
         <meta-data
             android:name="com.alibaba.app.appsecret"
-            android:value="XXX" />
+            android:value="e84ced474549441785b38ae6a665b9ec" />
         <meta-data
             android:name="com.huawei.hms.client.appid"
             android:value="appid=XXXXX" />
@@ -111,6 +111,12 @@
                 <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
             </intent-filter>
         </service>
+
+        <!--<queries>
+            <intent>
+                <action android:name="android.intent.action.TTS_SERVICE" />
+            </intent>
+        </queries>-->
 
     </application>
 

@@ -43,7 +43,7 @@ class MyMessageReceiver: MessageReceiver() {
                 }
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
             }
-
+            TTSManager.speak(getString(R.string.push_toast_receiver_deal_message))
         }
     }
 
