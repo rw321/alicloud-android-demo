@@ -7,6 +7,7 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.text.TextUtils
+import com.alibaba.push.android.demo.java.TTSManager
 import com.alibaba.sdk.android.push.CloudPushService
 import com.alibaba.sdk.android.push.HonorRegister
 import com.alibaba.sdk.android.push.huawei.HuaWeiRegister
@@ -23,7 +24,9 @@ class MainApplication:Application() {
         super.onCreate()
         Config.init(this)
         initPushSdk(this)
-        TTSManager.init(this)
+//        TTSManager.init(this)
+        TTSManager.getInstance().init(this)
+
     }
 
     private fun initPushSdk(context: Context) {

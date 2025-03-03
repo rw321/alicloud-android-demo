@@ -2,6 +2,8 @@ package com.alibaba.push.android.demo
 
 import android.content.Context
 import android.content.Intent
+import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.alibaba.sdk.android.push.MessageReceiver
@@ -23,18 +25,28 @@ class MyMessageReceiver: MessageReceiver() {
 
     override fun onNotification(
         context: Context?,
-        p1: String?,
-        p2: String?,
-        p3: MutableMap<String, String>?
+        title: String?,
+        content: String?,
+        extra: MutableMap<String, String>?
     ) {
         context?.let {
             Toast.makeText(it, it.getString(R.string.push_toast_receiver_deal_message), Toast.LENGTH_SHORT).show()
         }
+        extra?.apply {
+            if (containsKey("ttsContent")) {
+                val ttsContent = get("ttsContent")
+                Log.d("MyMessageReceiver", "ttsContent: $ttsContent")
+                if (!TextUtils.isEmpty(ttsContent)) {
+                    TTSManager.speak(ttsContent!!)
+                }
+            }
+
+        }
     }
 
-    override fun onMessage(context: Context?, p1: CPushMessage?) {
+    override fun onMessage(context: Context?, message: CPushMessage?) {
         context?.apply {
-            p1?.let {
+            message?.let {
                 val intent = Intent(MESSAGE_ACTION).apply {
                     putExtra(MESSAGE_TITLE, it.title)
                     putExtra(MESSAGE_CONTENT, it.content)
@@ -42,8 +54,8 @@ class MyMessageReceiver: MessageReceiver() {
                     putExtra(MESSAGE_TRACE_INFO, it.traceInfo)
                 }
                 LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+                TTSManager.speak(it.content)
             }
-            TTSManager.speak(getString(R.string.push_toast_receiver_deal_message))
         }
     }
 
